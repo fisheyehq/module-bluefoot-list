@@ -1,0 +1,21 @@
+<?php
+/** @var \Fisheye\BlueFootList\Block\ListBlock $block */
+?>
+
+<?php if ($block->hasChildEntities('list_items')): ?>
+
+    <?php $_items = $block->getChildEntities('list_items'); ?>
+
+    <div class="bluefoot-list <?php echo $block->getCssAttributes(); ?>" <?php echo $block->getStyleAttributes(); ?>>
+
+        <h3><?php echo $block->getListTitle(); ?></h3>
+
+        <ul style="list-style-type: <?php echo $block->getListStyle(); ?>">
+            <?php foreach ($_items as $_item): ?>
+                <?php echo $_item->toHtml(); ?>
+            <?php endforeach; ?>
+        </ul>
+
+    </div>
+
+<?php endif; ?>

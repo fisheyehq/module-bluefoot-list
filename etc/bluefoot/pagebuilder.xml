@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:gene:bluefoot:etc/bluefoot/pagebuilder.xsd">
+    <content_blocks>
+        <templates>
+            <template name="fisheye_list"
+                      file="Fisheye_BlueFootList::list.phtml"/>
+            <template name="fisheye_list_item"
+                      file="Fisheye_BlueFootList::list/item.phtml"/>
+        </templates>
+        <renderers>
+            <renderer name="fisheye_list_renderer"
+                      class="Fisheye\BlueFootList\Block\ListBlock"/>
+            <renderer name="fisheye_list_item_renderer"
+                      class="Fisheye\BlueFootList\Block\ListItem"/>
+        </renderers>
+    </content_blocks>
+</config>

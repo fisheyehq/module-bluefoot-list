@@ -1,0 +1,23 @@
+<?php
+/** @var \Fisheye\BlueFootList\Block\ListItem $block */
+$linkIcon = $block->getItemIcon();
+$linkUrl = $block->getItemLinkUrl();
+?>
+
+<li class="bluefoot-list-item <?php echo $block->getCssAttributes(); ?>"<?php echo $block->getStyleAttributes(); ?>>
+
+    <?php if ($linkUrl): ?>
+        <a href="<?php echo $linkUrl; ?>" <?php echo $block->getItemLinkTarget() ? 'target="_blank"' : '' ?>>
+    <?php endif; ?>
+
+    <?php if ($linkIcon): ?>
+        <i class="<?php echo $linkIcon; ?>"></i>
+    <?php endif; ?>
+
+    <?php echo $block->getItemText(); ?>
+
+    <?php if ($linkUrl): ?>
+        </a>
+    <?php endif; ?>
+
+</li>

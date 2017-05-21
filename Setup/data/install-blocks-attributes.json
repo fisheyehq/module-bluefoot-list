@@ -1,0 +1,313 @@
+{
+  "content_blocks": [
+    {
+      "identifier": "fisheye_list",
+      "name": "List",
+      "content_type": "block",
+      "description": "List builder",
+      "url_key_prefix": null,
+      "preview_field": null,
+      "renderer": "fisheye_list_renderer",
+      "item_view_template": "fisheye_list",
+      "list_template": null,
+      "list_item_template": null,
+      "item_layout_update_xml": null,
+      "list_layout_update_xml": null,
+      "singular_name": "List",
+      "plural_name": null,
+      "include_in_sitemap": "0",
+      "searchable": "0",
+      "icon_class": "fa fa-list-ul",
+      "color": "#5284bd",
+      "show_in_page_builder": "1",
+      "sort_order": "100",
+      "group": "fisheye",
+      "attribute_data": {
+        "attributes": [
+          "list_title",
+          "list_style",
+          "list_items",
+          "css_classes"
+        ],
+        "groups": [
+          {
+            "attribute_group_name": "Options",
+            "sort_order": "10",
+            "default_id": "0",
+            "attributes": [
+              {
+                "attribute_code": "list_title",
+                "sort_order": "10"
+              },
+              {
+                "attribute_code": "list_style",
+                "sort_order": "20"
+              }
+            ]
+          },
+          {
+            "attribute_group_name": "Items",
+            "sort_order": "20",
+            "default_id": "0",
+            "attributes": [
+              {
+                "attribute_code": "list_items",
+                "sort_order": "10"
+              }
+            ]
+          },
+          {
+            "attribute_group_name": "Advanced",
+            "sort_order": "30",
+            "default_id": "0",
+            "attributes": [
+              {
+                "attribute_code": "css_classes",
+                "sort_order": "10"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "identifier": "fisheye_list_item",
+      "name": "List Item",
+      "content_type": "block",
+      "description": "List builder item",
+      "url_key_prefix": null,
+      "preview_field": null,
+      "renderer": "fisheye_list_item_renderer",
+      "item_view_template": "fisheye_list_item",
+      "list_template": null,
+      "list_item_template": null,
+      "item_layout_update_xml": null,
+      "list_layout_update_xml": null,
+      "singular_name": "List Item",
+      "plural_name": null,
+      "include_in_sitemap": "0",
+      "searchable": "0",
+      "icon_class": "fa fa-circle",
+      "color": "#5284bd",
+      "show_in_page_builder": "0",
+      "sort_order": "0",
+      "group": "fisheye",
+      "attribute_data": {
+        "attributes": [
+          "list_item_text",
+          "list_item_icon",
+          "list_item_url",
+          "target_blank",
+          "css_classes"
+        ],
+        "groups": [
+          {
+            "attribute_group_name": "Options",
+            "sort_order": "10",
+            "default_id": "0",
+            "attributes": [
+              {
+                "attribute_code": "list_item_text",
+                "sort_order": "10"
+              },
+              {
+                "attribute_code": "list_item_icon",
+                "sort_order": "20"
+              }
+            ]
+          },
+          {
+            "attribute_group_name": "Link",
+            "sort_order": "20",
+            "default_id": "0",
+            "attributes": [
+              {
+                "attribute_code": "list_item_url",
+                "sort_order": "10"
+              },
+              {
+                "attribute_code": "target_blank",
+                "sort_order": "20"
+              }
+            ]
+          },
+          {
+            "attribute_group_name": "Advanced",
+            "sort_order": "30",
+            "default_id": "0",
+            "attributes": [
+              {
+                "attribute_code": "css_classes",
+                "sort_order": "10"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "attributes": [
+    {
+      "attribute_code": "list_title",
+      "attribute_model": null,
+      "backend_model": null,
+      "backend_type": "varchar",
+      "backend_table": null,
+      "frontend_model": null,
+      "frontend_input": "text",
+      "frontend_label": ["List Title"],
+      "frontend_class": null,
+      "source_model": null,
+      "is_required": "0",
+      "is_user_defined": "1",
+      "is_unique": "0",
+      "note": null,
+      "is_global": "0",
+      "is_wysiwyg_enabled": "0",
+      "is_visible": "1",
+      "content_scope": "0",
+      "frontend_input_renderer": null,
+      "widget": null,
+      "data_model": null,
+      "template": null,
+      "list_template": null,
+      "additional_data": [],
+      "entity_allowed_block_type": false
+    },
+    {
+      "attribute_code": "list_style",
+      "attribute_model": null,
+      "backend_model": null,
+      "backend_type": "varchar",
+      "backend_table": null,
+      "frontend_model": null,
+      "frontend_input": "select",
+      "frontend_label": ["List Style"],
+      "frontend_class": null,
+      "source_model": "Fisheye\\BlueFootList\\Model\\Entity\\Attribute\\Source\\ListStyle",
+      "is_required": "1",
+      "is_user_defined": "1",
+      "is_unique": "0",
+      "note": null,
+      "is_global": "0",
+      "is_wysiwyg_enabled": "0",
+      "is_visible": "1",
+      "content_scope": "0",
+      "frontend_input_renderer": null,
+      "widget": null,
+      "data_model": null,
+      "template": null,
+      "list_template": null,
+      "additional_data": [],
+      "entity_allowed_block_type": false
+    },
+    {
+      "attribute_code": "list_items",
+      "attribute_model": null,
+      "backend_model": "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\ArrayBackend",
+      "backend_type": "text",
+      "backend_table": null,
+      "frontend_model": null,
+      "frontend_input": "child_entity",
+      "frontend_label": ["List Items"],
+      "frontend_class": null,
+      "source_model": "Gene\\BlueFoot\\Model\\Attribute\\Source\\Entity\\Child",
+      "is_required": "0",
+      "is_user_defined": "1",
+      "is_unique": "0",
+      "note": null,
+      "is_global": "0",
+      "is_wysiwyg_enabled": "0",
+      "is_visible": "1",
+      "content_scope": "0",
+      "frontend_input_renderer": null,
+      "widget": null,
+      "data_model": null,
+      "template": null,
+      "list_template": null,
+      "additional_data": [],
+      "entity_allowed_block_type": "fisheye_list_item"
+    },
+    {
+      "attribute_code": "list_item_text",
+      "attribute_model": null,
+      "backend_model": null,
+      "backend_type": "varchar",
+      "backend_table": null,
+      "frontend_model": null,
+      "frontend_input": "text",
+      "frontend_label": ["List Item Text"],
+      "frontend_class": null,
+      "source_model": null,
+      "is_required": "1",
+      "is_user_defined": "1",
+      "is_unique": "0",
+      "note": null,
+      "is_global": "0",
+      "is_wysiwyg_enabled": "0",
+      "is_visible": "1",
+      "content_scope": "0",
+      "frontend_input_renderer": null,
+      "widget": null,
+      "data_model": null,
+      "template": null,
+      "list_template": null,
+      "additional_data": [],
+      "entity_allowed_block_type": false
+    },
+    {
+      "attribute_code": "list_item_icon",
+      "attribute_model": null,
+      "backend_model": null,
+      "backend_type": "varchar",
+      "backend_table": null,
+      "frontend_model": null,
+      "frontend_input": "text",
+      "frontend_label": ["List Item Icon"],
+      "frontend_class": null,
+      "source_model": null,
+      "is_required": "0",
+      "is_user_defined": "1",
+      "is_unique": "0",
+      "note": "Add a Font Awesome icon to list item. Enter a value such as <em>'fa fa-check'</em>.",
+      "is_global": "0",
+      "is_wysiwyg_enabled": "0",
+      "is_visible": "1",
+      "content_scope": "0",
+      "frontend_input_renderer": null,
+      "widget": null,
+      "data_model": null,
+      "template": null,
+      "list_template": null,
+      "additional_data": [],
+      "entity_allowed_block_type": false
+    },
+    {
+      "attribute_code": "list_item_url",
+      "attribute_model": null,
+      "backend_model": null,
+      "backend_type": "varchar",
+      "backend_table": null,
+      "frontend_model": null,
+      "frontend_input": "text",
+      "frontend_label": ["List item link URL"],
+      "frontend_class": null,
+      "source_model": null,
+      "is_required": "0",
+      "is_user_defined": "1",
+      "is_unique": "0",
+      "note": null,
+      "is_global": "0",
+      "is_wysiwyg_enabled": "0",
+      "is_visible": "1",
+      "content_scope": "0",
+      "frontend_input_renderer": null,
+      "widget": null,
+      "data_model": null,
+      "template": null,
+      "list_template": null,
+      "additional_data": [],
+      "entity_allowed_block_type": false
+    }
+  ]
+}
